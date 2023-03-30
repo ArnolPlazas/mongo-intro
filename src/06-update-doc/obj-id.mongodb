@@ -1,0 +1,11 @@
+use("platzi_store")
+
+db.products.updateOne(
+  //ObejectId => Function to find a doc with objID.
+  {_id: ObjectId("6425e93b4460a8bfbb642028")},
+  {
+    $inc: {
+      price: 150,
+    }
+  }
+);
