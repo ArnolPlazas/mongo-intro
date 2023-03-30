@@ -1,0 +1,26 @@
+// crea la base de datos si no existe
+use("platzi_store")
+
+// crea la coleccion si no existe
+db.products.insertOne({
+  name: "Prod 1",
+  price: 1000
+})
+
+db.products.insertOne({
+  name: "Prod 2",
+  price: 100
+})
+
+// asignar un id
+db.products.insertOne({
+  _id: 1,
+  name: "Prod 3",
+  price: 200
+})
+
+db.products.insertOne({
+  _id: 2,
+  name: "Prod 4",
+  price: 300
+})
