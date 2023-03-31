@@ -1,0 +1,13 @@
+use("platzi_store")
+
+db.inventory.updateOne(
+  {
+    _id: 4
+  },
+  {
+    // add an element at the end of an array
+    $push: {
+      tags: "headphone"
+    }
+  }
+  )
