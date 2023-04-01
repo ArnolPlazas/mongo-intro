@@ -1,0 +1,12 @@
+use("platzi_store")
+
+// using $eq
+// db.inventory.find({qty: 20}) // implicit
+// db.inventory.find({qty: {$eq: 20}}) // explicit
+
+// query to sub documents
+// db.inventory.find({"item.name": "ab"})
+//db.inventory.find({"item.code": {$eq: "123"}})
+
+// Using $ne
+db.inventory.find({qty: {$ne: 20}})
