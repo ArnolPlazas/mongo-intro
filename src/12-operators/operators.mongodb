@@ -1,0 +1,21 @@
+use("platzi_store")
+
+// using $gt: greater than (>) & $gte: greater or equal than (>=)
+
+// db.inventory.find({qty: {$gt: 20}})
+//db.inventory.find({qty: {$gte: 20}})
+
+// using $lt: less than (<) & $lte: less or equal than (<=)
+
+// db.inventory.find({qty: {$lt: 20}})
+// db.inventory.find({qty: {$lte: 20}})
+
+// using several operators
+
+// db.inventory.find({qty: {$gte: 20, $lte:35}})
+db.inventory.find(
+  {
+    "item.code": {$ne: "123"},
+    qty: {$gte: 20, $lte:35}
+  }
+)
