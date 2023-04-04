@@ -1,0 +1,27 @@
+use("sample_training")
+
+// db.trips.find({
+//   "start station location.type": "Point"
+// })
+
+// CEO's first name is Mark
+db.companies.find({
+  "relationships.0.person.first_name": "Mark"
+}, {
+  name: 1,
+  relationships: 1
+}
+).count()
+
+// people into the companies called Mark
+db.companies.find({
+  relationships: {
+    $elemMatch: {
+      "person.first_name": "Mark"
+    }
+  }
+}, {
+  name: 1,
+  relationships: 1
+}
+).count()
