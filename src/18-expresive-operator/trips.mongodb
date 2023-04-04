@@ -1,0 +1,18 @@
+use("sample_training")
+
+// start station and end station are the same
+// db.trips.find({
+//   $expr: {
+//     $eq: ["$start station id", "$end station id"]
+//   }
+// }).count()
+
+// start station and end station are the same, and tripduration >= 1200
+db.trips.find({
+  $expr: {
+    $and: [
+      {$eq: ["$start station id", "$end station id"]},
+      {$gte: ["$tripduration", 1200]}
+    ]
+  }
+}).count()
