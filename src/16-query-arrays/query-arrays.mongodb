@@ -1,0 +1,47 @@
+use("platzi_store")
+
+// $in -> values & arrays
+// db.inventory.find({
+//   qty: { $in: [20, 25]} // or in  a value
+// })
+
+// db.inventory.find({
+//   tags: { $in: ["book", "electronics"]} // or in a array
+// })
+
+// $nin -> values & arrays
+// db.inventory.find({
+//   qty: { $nin: [20, 25]} // nor in  a value
+// })
+
+// db.inventory.find({
+//   tags: { $nin: ["book", "electronics"]} // nor in a array
+// })
+
+// arrays
+
+// db.inventory.find({
+//   tags: "book" // a element
+// })
+
+// db.inventory.find({
+//   tags: ["school", "book"] // and in a array , takes into account the order of elements
+// })
+
+//$all
+// db.inventory.find({
+//   tags: {$all: ["book", "school"]} // and in a array , doesn't take into account the order of elements
+// })
+
+//size
+// db.inventory.find({
+//   tags: {$size: 2} // array's size
+// })
+
+// $elemMatch
+db.survey.find({
+  results: { $elemMatch: {
+    product: "xyz",
+    score: { $gte: 7}
+  } }
+})
