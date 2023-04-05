@@ -1,0 +1,9 @@
+use("sample_training")
+// Top 10 population
+db.zips.find({
+  pop: {
+    $gte: 100
+  }
+}).sort({
+  pop: -1 // 1: asc, 0: desc
+}).limit(10)

@@ -1,0 +1,7 @@
+use("platzi_store")
+
+// pagination by 2
+db.categories
+  .find()
+  .skip(2) // ofset: 0, 2, 4, 6 ....
+  .limit(2)
